@@ -93,7 +93,7 @@ await contract.deleteTask(0);
 
 ## Contract Information  
 
-- **Contract Address:** `0xYOUR_CONTRACT_ADDRESS`  
+- **Contract Address:** `0xeF9585013e72570e04B286f1AaC0C69458d90505`  
 - **Testnet Used:** `Sepolia`  
 - **ABI File:** Available in `artifacts/contracts/TaskManager.json`  
 
