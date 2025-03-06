@@ -1,99 +1,115 @@
-# Hardhat Project
+# TaskManager Smart Contract - Hardhat Project  
 
-This project demonstrates a basic Hardhat use case. It comes with a TaskManager smart contract that allows users to create, edit, delete, and mark tasks as completed. The contract ensures that only the task owner can modify or delete their tasks.
+This project implements a **Task Management System** using a Solidity smart contract. It allows users to **create, edit, delete, and mark tasks as completed** while ensuring that only the task owner can modify or delete their tasks.  
 
-Try running some of the following tasks:
+The contract is developed and deployed using **Hardhat**, an Ethereum development environment that facilitates testing, debugging, and smart contract deployment.  
 
-```shell
-npx hardhat help
-npx hardhat test
-REPORT_GAS=true npx hardhat test
-npx hardhat node
-npx hardhat run scripts/deploy.js --network sepolia
-```
+## Features  
 
-## 🚀 Features
+- Create a task with a title and description.  
+- Edit a task (only the task owner can modify).  
+- Mark a task as completed.  
+- Delete a task (only the task owner can delete).  
+- Fetch all tasks stored in the blockchain.  
 
-✅ **Add a task** with title and description.  
-✏️ **Edit a task** (only the owner can modify).  
-✅ **Mark a task as completed**.  
-🗑 **Delete a task** (only the owner can delete).  
-📜 **Fetch all tasks**.  
+## Technology Stack  
 
-## 📌 Smart Contract Details
-
-- **Language:** Solidity `0.8.28`  
+- **Smart Contract Language:** Solidity 0.8.28  
 - **Blockchain:** Ethereum/Polygon (Testnet)  
-- **Storage:** `mapping(uint => Task)`  
+- **Development Framework:** Hardhat  
+- **Storage Mechanism:** `mapping(uint => Task)`  
+- **Ethereum Provider:** Alchemy / Infura  
+- **Wallet:** MetaMask (for deploying and interacting with the contract)  
 
-## 🛠 Deployment Steps
+---
 
-### **1️⃣ Install Dependencies**
+## Deployment Steps  
 
-Ensure you have **Node.js**, **Hardhat**, and **ethers.js** installed.
+### 1. Install Dependencies  
+
+Ensure you have **Node.js** installed. Then, install Hardhat and the necessary dependencies:  
 
 ```shell
 npm install
 npm install --save-dev hardhat ethers dotenv
 ```
 
-### **2️⃣ Compile the Smart Contract**
+### 2. Compile the Smart Contract  
+
+Run the following command to compile the contract and check for any errors:  
 
 ```shell
 npx hardhat compile
 ```
 
-### **3️⃣ Deploy the Contract (Hardhat)**
+### 3. Deploy the Smart Contract  
 
-1. Set up a `.env` file with your **Alchemy/Infura API key** and **wallet private key**.
-2. Deploy with:
+1. Create a `.env` file in the root directory and add your **Alchemy/Infura API key** and **wallet private key** (ensure this file is listed in `.gitignore` to prevent accidental commits).  
+   
+2. Deploy the contract to the **Sepolia Testnet**:  
 
    ```shell
    npx hardhat run scripts/deploy.js --network sepolia
    ```
 
-3. Copy the **contract address** from the terminal.
+3. Copy and save the **contract address** displayed in the terminal after deployment.  
 
-## 📡 Example Transactions (Hardhat Console)
+---
 
-### **1️⃣ Create a Task**
+## Example Transactions (Using Hardhat Console)  
+
+### 1. Create a Task  
 
 ```shell
 await contract.createTask("Learn Solidity", "Complete TaskManager Smart Contract");
 ```
 
-### **2️⃣ Fetch a Task**
+### 2. Fetch a Task  
 
 ```shell
 const task = await contract.getTask(0);
 console.log(task);
 ```
 
-### **3️⃣ Mark a Task as Completed**
+### 3. Mark a Task as Completed  
 
 ```shell
 await contract.completeTask(0);
 ```
 
-### **4️⃣ Edit a Task**
+### 4. Edit a Task  
 
 ```shell
 await contract.editTask(0, "Master Solidity", "Learn advanced Solidity concepts");
 ```
 
-### **5️⃣ Delete a Task**
+### 5. Delete a Task  
 
 ```shell
 await contract.deleteTask(0);
 ```
 
-## 🔗 Contract Information
+---
+
+## Contract Information  
 
 - **Contract Address:** `0xYOUR_CONTRACT_ADDRESS`  
 - **Testnet Used:** `Sepolia`  
 - **ABI File:** Available in `artifacts/contracts/TaskManager.json`  
 
-## 📜 License
+---
 
-This project is licensed under the **MIT License**.
-```
+## License  
+
+This project is licensed under the **MIT License**.  
+
+---
+
+### Notes  
+
+- The `.env` file must be created manually and should include:  
+  ```
+  ALCHEMY_API_KEY=your_alchemy_api_key
+  PRIVATE_KEY=your_wallet_private_key
+  ```
+- Make sure **MetaMask** is connected to the Sepolia Testnet before interacting with the deployed contract.  
