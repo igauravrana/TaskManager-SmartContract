@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task Manager</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ethers/5.7.2/ethers.umd.min.js"></script>
+    <script defer src="script.js"></script>
+</head>
+<body>
+    <h2>Blockchain Task Manager</h2>
+
+    <button id="connectBtn">Connect Wallet</button>
+    <p id="status"></p>
+
+    <h3>Create Task</h3>
+    <input type="text" id="taskTitle" placeholder="Task Title">
+    <input type="text" id="taskDescription" placeholder="Task Description">
+    <button id="createTaskBtn">Create Task</button>
+
+    <h3>All Tasks</h3>
+    <button id="fetchTasksBtn">Fetch Tasks</button>
+    <ul id="taskList"></ul>
+
+</body>
+</html>
